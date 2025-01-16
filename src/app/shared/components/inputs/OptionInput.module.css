@@ -1,0 +1,11 @@
+.root{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    select{
+        padding: 16px;
+        border: 1px solid black;
+        border-radius: 16px;
+    }
+}

@@ -1,0 +1,77 @@
+.root {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 250px;
+
+    background-color: black;
+    color: white;
+
+    padding: 0 16px;
+
+    font-family: var(--font-open-sans);
+
+    a {
+        display: block;
+        color: white;
+        margin: 4px 0;
+    }
+
+    h3{
+        font-weight: 700;
+        font-size: 30px;
+        font-family: var(--font-roboto);
+    }
+
+    h4 {
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .contacts,
+    .pages,
+    .social {
+        padding: 16px 50px;
+        font-size: 18px;
+    }
+
+    .contacts {
+        text-align: right;
+    }
+
+    .pages {
+        text-align: center;
+
+        border-left: 1px solid #D4D4D4;
+        border-right: 1px solid #D4D4D4;
+
+        a {
+            margin: 8px 0;
+        }
+    }
+
+    .social {
+        text-align: left;
+
+        .plates {
+            display: flex;
+            gap: 15px;
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+
+                background-color: #EFF6F1;
+
+                svg {
+                    max-width: 20px;
+                    max-height: 20px;
+                }
+            }
+        }
+    }
+}

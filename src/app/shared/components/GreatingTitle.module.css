@@ -1,0 +1,23 @@
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+    &.light{
+        color: white;
+    }
+
+    &.dark{
+        color: black;
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 128px;
+        margin: 0;
+    }
+
+    span {
+        font-size: 32px;
+    }
+}

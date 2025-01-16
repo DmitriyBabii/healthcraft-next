@@ -1,0 +1,36 @@
+.root {
+   width: 650px;
+   margin: auto;
+   padding: 24px;
+   border-radius: 24px;
+   background-color: white;
+
+   font-size: 24px;
+   font-family: var(--font-montserrat);
+
+   form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+   }
+
+   h2 {
+      text-align: center;
+      margin: 0;
+      font-family: var(--font-montserrat-alternates);
+   }
+
+   button{
+      align-self: center;
+      height: 60px;
+      width: 320px;
+      cursor: pointer;
+
+      border: unset;
+      border-radius: 60px;
+      background-color: black;
+
+      color: white;
+      font-family: var(--font-montserrat-alternates);
+   }
+}

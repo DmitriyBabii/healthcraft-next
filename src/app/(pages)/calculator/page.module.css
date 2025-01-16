@@ -1,0 +1,8 @@
+.root {
+    min-height: calc(100svh - 88px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+
+    padding: 150px 16px;
+}

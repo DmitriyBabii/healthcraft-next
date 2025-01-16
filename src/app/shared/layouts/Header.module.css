@@ -1,0 +1,35 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  height: 88px;
+  width: 100%;
+
+  background-color: black;
+
+  &.home {
+    position: absolute;
+    background-color: unset;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  a {
+    color: white;
+    font-weight: 700;
+
+    &.link {
+      font-size: 24px;
+      font-family: var(--font-montserrat);
+    }
+
+    &.mainLink {
+      font-size: 64px;
+      padding: 0 30px;
+      font-family: var(--font-namdhinggo);
+    }
+  }
+}

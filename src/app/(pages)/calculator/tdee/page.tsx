@@ -16,7 +16,10 @@ export default function BmiCalculator() {
             style={{ backgroundImage: `url(${bgImage.src})` }}
          >
             <FormProvider>
-               <CalculatorForm label="Онлайн калькулятор калорій" action="/api/tdee">
+               <CalculatorForm
+                  label="Онлайн калькулятор калорій"
+                  action="/api/tdee"
+               >
                   <ChooseGender />
                   <AppInput
                      label="Вік"

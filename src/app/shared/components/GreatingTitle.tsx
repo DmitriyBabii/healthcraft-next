@@ -12,8 +12,8 @@ export default function GreetingTitle({
   return (
     <>
       <div className={`${styles.title} ${styles[theme]}`}>
-        <h1>{title}</h1>
-        <span>{description}</span>
+        <h1 className={styles.h1}>{title}</h1>
+        <span className={styles.span}>{description}</span>
       </div>
     </>
   );

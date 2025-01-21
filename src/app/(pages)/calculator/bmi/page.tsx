@@ -6,7 +6,7 @@ import CalculatorForm from '@/app/shared/components/forms/CalculatorForm';
 import ChooseGender from '@/app/shared/components/inputs/ChooseGender';
 import AppInput from '@/app/shared/components/inputs/AppInput';
 import { FormProvider } from '@/app/shared/providers/FormProvider';
- 
+
 export default function BmiCalculator() {
    return (
       <>

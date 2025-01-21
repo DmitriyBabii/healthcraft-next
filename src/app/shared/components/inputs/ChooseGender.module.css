@@ -2,7 +2,7 @@
    display: flex;
    justify-content: space-evenly;
 
-   label {
+   .label {
       display: flex;
       align-items: center;
       gap: 4px;
@@ -25,7 +25,7 @@
       }
    }
 
-   input[type='radio'] {
+   .input[type='radio'] {
       position: absolute;
       opacity: 0;
    }

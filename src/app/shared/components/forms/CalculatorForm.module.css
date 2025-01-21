@@ -8,19 +8,19 @@
    font-size: 24px;
    font-family: var(--font-montserrat);
 
-   form {
+   .form {
       display: flex;
       flex-direction: column;
       gap: 24px;
    }
 
-   h2 {
+   .h2 {
       text-align: center;
       margin: 0;
       font-family: var(--font-montserrat-alternates);
    }
 
-   button{
+   .button{
       align-self: center;
       height: 60px;
       width: 320px;

@@ -2,8 +2,8 @@
 
 import { useFormContext } from '@/app/shared/providers/FormProvider';
 import styles from './CalculatorForm.module.css';
-import { FormEventHandler, useState } from 'react';
-import { nameMapper } from '@/app/(api)/api/nameMapper';
+import { FormEventHandler, ReactNode, useState } from 'react';
+import { nameMapper } from '@/app/api/nameMapper';
 
 export default function CalculatorForm({
    label,
@@ -12,7 +12,7 @@ export default function CalculatorForm({
 }: {
    label: string;
    action: string;
-   children: any;
+   children: ReactNode;
 }) {
    const [data, setData] = useState<object | undefined>(undefined);
    const [loading, setLoading] = useState<boolean>(false);
@@ -23,7 +23,7 @@ export default function CalculatorForm({
       event.preventDefault();
       setLoading(true);
       setData(undefined);
-      setLocalError(undefined)
+      setLocalError(undefined);
       fetch(action, {
          method: 'POST',
          headers: {
@@ -50,8 +50,8 @@ export default function CalculatorForm({
    return (
       <>
          <div className={styles.root}>
-            <form onSubmit={handleSubmit}>
-               <h2>{label}</h2>
+            <form className={styles.form} onSubmit={handleSubmit}>
+               <h2 className={styles.h2}>{label}</h2>
                {children}
                {loading && <div>Loading...</div>}
                {data && (
@@ -69,7 +69,7 @@ export default function CalculatorForm({
                   </div>
                )}
                {localError}
-               <button>Розрахувати</button>
+               <button className={styles.button}>Розрахувати</button>
             </form>
          </div>
       </>

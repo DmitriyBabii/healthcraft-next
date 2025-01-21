@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useFormContext } from '../../providers/FormProvider';
 import styles from './OptionInput.module.css';
 
@@ -24,13 +24,18 @@ export default function OptionInput({
 
    useEffect(() => {
       values[selectName] = options[0].value;
-   }, []);
+   });
 
    return (
       <>
          <div className={styles.root}>
             <span>{label}</span>
-            <select name={selectName} onChange={handleChange} required={true}>
+            <select
+               className={styles.select}
+               name={selectName}
+               onChange={handleChange}
+               required={true}
+            >
                {options.map((option) => (
                   <option key={option.value} value={option.value}>
                      {option.title}

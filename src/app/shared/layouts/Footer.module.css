@@ -10,19 +10,19 @@
 
     font-family: var(--font-open-sans);
 
-    a {
+    .a {
         display: block;
         color: white;
         margin: 4px 0;
     }
 
-    h3{
+    .h3{
         font-weight: 700;
         font-size: 30px;
         font-family: var(--font-roboto);
     }
 
-    h4 {
+    .h4 {
         font-weight: 700;
         margin-bottom: 8px;
     }
@@ -44,7 +44,7 @@
         border-left: 1px solid #D4D4D4;
         border-right: 1px solid #D4D4D4;
 
-        a {
+        .a {
             margin: 8px 0;
         }
     }
@@ -56,7 +56,7 @@
             display: flex;
             gap: 15px;
 
-            a {
+            .a {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -67,7 +67,7 @@
 
                 background-color: #EFF6F1;
 
-                svg {
+                .svg {
                     max-width: 20px;
                     max-height: 20px;
                 }

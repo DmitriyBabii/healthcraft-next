@@ -10,8 +10,9 @@ export default function ChooseGender() {
       <>
          <div className={styles.root}>
             <span>Стать:</span>
-            <label>
+            <label className={styles.label}>
                <input
+                  className={styles.input}
                   type="radio"
                   value={'FEMALE'}
                   name="gender"
@@ -20,8 +21,9 @@ export default function ChooseGender() {
                />
                <span>жінка</span>
             </label>
-            <label>
+            <label className={styles.label}>
                <input
+                  className={styles.input}
                   type="radio"
                   value={'MALE'}
                   name="gender"

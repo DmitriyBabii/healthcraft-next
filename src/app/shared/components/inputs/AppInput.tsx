@@ -21,7 +21,7 @@ export default function AppInput({ label, ...inputProps }: AppInputType) {
       <>
          <div className={styles.root}>
             <span>{label}</span>
-            <input {...inputProps} onChange={handleChange} />
+            <input {...inputProps} className={styles.input} onChange={handleChange} />
          </div>
       </>
    );

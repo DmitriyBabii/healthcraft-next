@@ -1,0 +1,28 @@
+.root{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 230px;
+    width: 430px;
+    padding: 32px;
+
+    background-color: #F9F9F9;
+    border-radius: 20px;
+
+    font-family: var(--font-montserrat);
+    font-size: 24px;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-weight: 600;
+}
+
+.content{
+    text-align: center;
+}

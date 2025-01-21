@@ -1,0 +1,94 @@
+.root {
+   position: absolute;
+   top: calc(100% + 16px);
+   right: 0;
+
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+
+   min-width: 300px;
+   padding: 16px;
+   background-color: white;
+
+   font-family: var(--font-montserrat);
+   box-shadow: 0 0 4px black;
+
+   z-index: 10;
+
+   color: #a59f9f;
+
+   .h3 {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      font-size: 24px;
+      font-weight: 400;
+      margin: 0;
+
+      color: #a59f9f;
+   }
+
+   .h3::before,
+   .h3::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #a59f9f;
+   }
+
+   .form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      color: #a59f9f;
+   }
+
+   .input {
+      width: 300px;
+      height: 40px;
+      padding: 0 16px;
+
+      color: #a59f9f;
+   }
+
+   .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+
+      padding: 8px 16px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 60px;
+      cursor: pointer;
+
+      color: #a59f9f;
+
+      .span {
+         color: black;
+      }
+
+      .svg {
+         width: 12px;
+      }
+   }
+}
+
+.burgerBtn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+
+   width: 300px;
+   height: 40px;
+   border: 1px solid #a59f9f;
+
+   font-size: 24px;
+   font-family: var(--font-montserrat);
+}

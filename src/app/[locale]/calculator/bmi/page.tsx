@@ -6,8 +6,11 @@ import CalculatorForm from '@/app/shared/components/forms/CalculatorForm';
 import ChooseGender from '@/app/shared/components/inputs/ChooseGender';
 import AppInput from '@/app/shared/components/inputs/AppInput';
 import { FormProvider } from '@/app/shared/providers/FormProvider';
+import { useTranslations } from 'next-intl';
 
 export default function BmiCalculator() {
+   const t = useTranslations('BMI');
+
    return (
       <>
          <main
@@ -15,10 +18,10 @@ export default function BmiCalculator() {
             style={{ backgroundImage: `url(${bgImage.src})` }}
          >
             <FormProvider>
-               <CalculatorForm label="Онлайн калькулятор ІМТ" action="/api/bmi">
+               <CalculatorForm label={t('header')} action="/api/bmi">
                   <ChooseGender />
                   <AppInput
-                     label="Вік"
+                     label={t('age-label')}
                      type="number"
                      name="age"
                      min={12}
@@ -26,7 +29,7 @@ export default function BmiCalculator() {
                      required={true}
                   />
                   <AppInput
-                     label="Зріст"
+                     label={t('height-label')}
                      type="number"
                      name="height"
                      min={100}
@@ -34,7 +37,7 @@ export default function BmiCalculator() {
                      required={true}
                   />
                   <AppInput
-                     label="Вага"
+                     label={t('weight-label')}
                      type="number"
                      name="weight"
                      min={30}

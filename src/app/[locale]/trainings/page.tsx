@@ -6,11 +6,13 @@ import axios from 'axios';
 import Image from 'next/image';
 import trainingImage from './training.png';
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function TrainingPage() {
    const [loading, setLoading] = useState<boolean>(true);
    const [data, setData] = useState<TrainingCollection[] | null>(null);
    const [training, setTraining] = useState<string | null>(null);
+   const t = useTranslations('Training');
 
    useEffect(() => {
       axios.get(`/api/trainings`).then((res) => {
@@ -24,18 +26,18 @@ export default function TrainingPage() {
    const handleTrainingType = (type: TrainingType): string => {
       switch (type) {
          case 'WEIGHT_LOSS':
-            return 'Тренування для схуднення';
+            return t('WEIGHT_LOSS');
          case 'WEIGHT_GAIN':
-            return 'Тренування для набору ваги';
+            return t('WEIGHT_GAIN');
          case 'STRETCHING':
-            return 'Стретчинг';
+            return t('STRETCHING');
          default:
             return type as string;
       }
    };
 
    if (loading) {
-      return <div className={styles.loading}>Loading...</div>;
+      return <div className={styles.loading}>{t('loading')}</div>;
    }
 
    return (
@@ -78,7 +80,9 @@ export default function TrainingPage() {
                                     className={styles.training}
                                     key={training.id}
                                  >
-                                    <span className={styles.span}>{training.name}</span>
+                                    <span className={styles.span}>
+                                       {training.name}
+                                    </span>
                                     <div>
                                        <Image
                                           src={trainingImage}
@@ -93,7 +97,7 @@ export default function TrainingPage() {
                                           setTraining(training.videoSrc)
                                        }
                                     >
-                                       Тренування
+                                       {t('training')}
                                     </div>
                                  </div>
                               );
@@ -102,17 +106,6 @@ export default function TrainingPage() {
                      </div>
                   );
                })}
-
-            {/* <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/zNh6LK1h3AY?si=X-AbfxNtytGTKYz6"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-               ></iframe> */}
          </main>
       </>
    );

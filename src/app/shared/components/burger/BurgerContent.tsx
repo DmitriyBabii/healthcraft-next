@@ -4,6 +4,7 @@ import { useState } from 'react';
 import styles from './BurgerContent.module.css';
 import { useFormContext } from '../../providers/FormProvider';
 import { signIn, signOut, useSession } from 'next-auth/react';
+import { useTranslations } from 'next-intl';
 
 type BurgerContentSection = 'default' | 'login' | 'signin';
 
@@ -12,6 +13,7 @@ export default function BurgerContent() {
    const [error, setError] = useState<string | null>(null);
    const { values, handleChange } = useFormContext();
    const { data: session, status } = useSession();
+   const t = useTranslations('BurgerContent');
 
    const handleSignIn = async () => {
       const result = await signIn('credentials', {
@@ -23,8 +25,8 @@ export default function BurgerContent() {
       if (result?.ok) {
          setSection('default');
       } else {
-         setError(`${result?.error} ${result?.url}`);
-         // setError('Невірний логін або пароль');
+         console.log(result?.error);
+         setError(t('wrong-auth'));
       }
    };
 
@@ -43,7 +45,7 @@ export default function BurgerContent() {
       setError(null);
 
       if (values.password !== values.confirmPassword) {
-         setError('Паролі не співпадають');
+         setError(t('password-confirm-incorrect'));
          return;
       }
 
@@ -64,14 +66,14 @@ export default function BurgerContent() {
 
    const renderContent = () => {
       if (status === 'loading') {
-         return <div>Завантаження...</div>;
+         return <div>{t('loading')}</div>;
       }
 
       switch (section) {
          case 'login': {
             return (
                <>
-                  <h3 className={styles.h3}>Увійти</h3>
+                  <h3 className={styles.h3}>{t('login')}</h3>
                   <form className={styles.form} onSubmit={handleLoginSubmit}>
                      <input
                         className={styles.input}
@@ -85,7 +87,7 @@ export default function BurgerContent() {
                      <input
                         className={styles.input}
                         type="password"
-                        placeholder="Пароль"
+                        placeholder={t('password-label')}
                         name="password"
                         autoComplete="current-password"
                         onChange={handleChange}
@@ -93,7 +95,7 @@ export default function BurgerContent() {
                      />
                      {error && <div>{error}</div>}
                      <button className={styles.button}>
-                        <span className={styles.span}>Увійти</span>
+                        <span className={styles.span}>{t('login')}</span>
                         <svg
                            className={styles.svg}
                            xmlns="http://www.w3.org/2000/svg"
@@ -115,12 +117,12 @@ export default function BurgerContent() {
          case 'signin': {
             return (
                <>
-                  <h3 className={styles.h3}>Зареєструватися</h3>
+                  <h3 className={styles.h3}>{t('signin')}</h3>
                   <form className={styles.form} onSubmit={handleSigninSubmit}>
                      <input
                         className={styles.input}
                         type="text"
-                        placeholder="Ім'я"
+                        placeholder={t('name-label')}
                         name="name"
                         onChange={handleChange}
                         required
@@ -128,7 +130,7 @@ export default function BurgerContent() {
                      <input
                         className={styles.input}
                         type="text"
-                        placeholder="Прізвище"
+                        placeholder={t('surname-label')}
                         name="surname"
                         onChange={handleChange}
                         required
@@ -145,7 +147,7 @@ export default function BurgerContent() {
                      <input
                         className={styles.input}
                         type="password"
-                        placeholder="Пароль"
+                        placeholder={t('password-label')}
                         autoComplete="new-password"
                         name="password"
                         onChange={handleChange}
@@ -154,7 +156,7 @@ export default function BurgerContent() {
                      <input
                         className={styles.input}
                         type="password"
-                        placeholder="Повторіть пароль"
+                        placeholder={t('password-confirm-label')}
                         autoComplete="new-password"
                         name="confirmPassword"
                         onChange={handleChange}
@@ -162,7 +164,7 @@ export default function BurgerContent() {
                      />
                      {error && <div>{error}</div>}
                      <button className={styles.button}>
-                        <span className={styles.span}>Зареєструватися</span>
+                        <span className={styles.span}>{t('signin')}</span>
                         <svg
                            className={styles.svg}
                            xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +192,7 @@ export default function BurgerContent() {
                      style={{ color: 'red', cursor: 'pointer' }}
                      onClick={() => signOut({ redirect: false })}
                   >
-                     Вийти
+                     {t('signout')}
                   </div>
                </>
             ) : (
@@ -199,13 +201,13 @@ export default function BurgerContent() {
                      className={styles.burgerBtn}
                      onClick={() => setSection('login')}
                   >
-                     Увійти
+                     {t('login')}
                   </div>
                   <div
                      className={styles.burgerBtn}
                      onClick={() => setSection('signin')}
                   >
-                     Зареєструватися
+                     {t('signin')}
                   </div>
                </>
             );

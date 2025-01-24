@@ -1,15 +1,17 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useFormContext } from '../../providers/FormProvider';
 import styles from './ChooseGender.module.css';
 
 export default function ChooseGender() {
    const { handleChange } = useFormContext();
+   const t = useTranslations('Gender');
 
    return (
       <>
          <div className={styles.root}>
-            <span>Стать:</span>
+            <span>{t('gender-label')}</span>
             <label className={styles.label}>
                <input
                   className={styles.input}
@@ -19,7 +21,7 @@ export default function ChooseGender() {
                   required={true}
                   onChange={handleChange}
                />
-               <span>жінка</span>
+               <span>{t('female')}</span>
             </label>
             <label className={styles.label}>
                <input
@@ -30,7 +32,7 @@ export default function ChooseGender() {
                   required={true}
                   onChange={handleChange}
                />
-               <span>чоловік</span>
+               <span>{t('male')}</span>
             </label>
          </div>
       </>

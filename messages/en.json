@@ -1,12 +1,98 @@
 {
   "HomePage": {
-     "title": "Hello world!",
-     "about": "Go to the about page"
+    "title": "Hello world!",
+    "about": "Go to the about page"
   },
   "Header": {
-     "food-link": "Food",
-     "calculator-bmi": "Calculator BMI",
-     "calculator-tdee": "Calculator TDEE",
-     "training": "Training"
+    "food-link": "Food",
+    "calculator-bmi": "Calculator BMI",
+    "calculator-tdee": "Calculator TDEE",
+    "training": "Training"
+  },
+  "Footer": {
+    "contacts": "Contacts",
+    "phone": "Phone",
+    "socials": "Socials",
+    "main-link": "Main",
+    "food-link": "Food",
+    "bmi-link": "Calculator BMI",
+    "tdee-link": "Calculator TDEE",
+    "training-link": "Trainings"
+  },
+  "Training": {
+    "WEIGHT_LOSS": "Weight Loss Training",
+    "WEIGHT_GAIN": "Weight Gain Training",
+    "STRETCHING": "Stretching",
+    "loading": "Loading...",
+    "training": "Training"
+  },
+  "Food": {
+    "main-header": "Personalized Meal Plan",
+    "main-slogan": "For those who care about their body, health, and time.",
+    "order": "Order",
+    "auth-to-order": "To order a personalized meal plan, you need to log in",
+    "section-slogan": "Taking care of yourself is taking care of the future",
+    "question-header": "What issues will the meal plan solve for you?",
+    "how-we-work": "How we work",
+    "step1": "You purchase a personalized meal plan.",
+    "step2": "You receive an email with a questionnaire, which you fill out and send back to us.",
+    "step3": "We create the meal plan and send it to your email.",
+    "step4": "You eat healthily and deliciously with pleasure.",
+    "tile-weight-header": "Weight Correction",
+    "tile-weight-desc": "If you want to adjust your body shape.",
+    "tile-strong-header": "Muscle Gain",
+    "tile-strong-desc": "Planning to gain muscle mass? We will help you!",
+    "tile-skin-header": "Skin Problems",
+    "tile-skin-desc": "If you notice visible skin issues on your face.",
+    "tile-vitamin-header": "Vitamin Deficiency",
+    "tile-vitamin-desc": "If your body lacks vitamins and micronutrients.",
+    "tile-energy-header": "Lack of Energy",
+    "tile-energy-desc": "Do you feel like you lack energy even for basic activities?",
+    "tile-food-header": "Food Addiction",
+    "tile-food-desc": "Emotional dependence on food. When it's hard to resist eating something tasty."
+  },
+  "BMI": {
+    "header": "Online BMI Calculator",
+    "age-label": "Age",
+    "height-label": "Height",
+    "weight-label": "Weight"
+  },
+  "TDEE": {
+    "header": "Online Calorie Calculator",
+    "age-label": "Age",
+    "height-label": "Height",
+    "weight-label": "Weight",
+    "activity-level": "Activity Level",
+    "activity-min": "Minimal (sedentary lifestyle)",
+    "activity-low": "Low (light exercise 1-3 times a week)",
+    "activity-avarage": "Average (moderate exercise 3-5 times a week)",
+    "activity-high": "High (intensive exercise 6-7 times a week)",
+    "activity-very-high": "Very high (physical job or training)",
+    "goal": "Goal",
+    "goal-loss": "Weight Loss",
+    "goal-maintenance": "Maintenance",
+    "goal-gain": "Weight Gain"
+  },
+  "Gender": {
+    "gender-label": "Gender:",
+    "female": "female",
+    "male": "male"
+  },
+  "BurgerContent": {
+    "wrong-auth": "Incorrect login or password",
+    "password-confirm-incorrect": "Passwords do not match",
+    "loading": "Loading...",
+    "login": "Login",
+    "password-label": "Password",
+    "signin": "Sign Up",
+    "name-label": "First Name",
+    "surname-label": "Last Name",
+    "password-confirm-label": "Repeat Password",
+    "signout": "Logout"
+  },
+  "MainPage": {
+    "main-header": "Your Healthy Body, Your Choice",
+    "main-desc": "We are glad that you have chosen us on your journey to a healthier and more active life. Here you will find everything you need to achieve your goals. Start your journey right now – calculate your body mass to get recommendations that will help you become the best version of yourself!",
+    "main-btn": "Calculate"
   }
 }

@@ -7,8 +7,11 @@ import ChooseGender from '@/app/shared/components/inputs/ChooseGender';
 import AppInput from '@/app/shared/components/inputs/AppInput';
 import { FormProvider } from '@/app/shared/providers/FormProvider';
 import OptionInput from '@/app/shared/components/inputs/OptionInput';
+import { useTranslations } from 'next-intl';
 
 export default function BmiCalculator() {
+   const t = useTranslations('TDEE');
+
    return (
       <>
          <main
@@ -16,13 +19,10 @@ export default function BmiCalculator() {
             style={{ backgroundImage: `url(${bgImage.src})` }}
          >
             <FormProvider>
-               <CalculatorForm
-                  label="Онлайн калькулятор калорій"
-                  action="/api/tdee"
-               >
+               <CalculatorForm label={t('header')} action="/api/tdee">
                   <ChooseGender />
                   <AppInput
-                     label="Вік"
+                     label={t('age-label')}
                      type="number"
                      name="age"
                      min={12}
@@ -30,7 +30,7 @@ export default function BmiCalculator() {
                      required={true}
                   />
                   <AppInput
-                     label="Зріст"
+                     label={t('height-label')}
                      type="number"
                      name="height"
                      min={100}
@@ -38,7 +38,7 @@ export default function BmiCalculator() {
                      required={true}
                   />
                   <AppInput
-                     label="Вага"
+                     label={t('weight-label')}
                      type="number"
                      name="weight"
                      min={30}
@@ -46,45 +46,45 @@ export default function BmiCalculator() {
                      required={true}
                   />
                   <OptionInput
-                     label="Рівень активності"
+                     label={t('activity-level')}
                      selectName="activityLevel"
                      options={[
                         {
-                           title: 'мінімальна (сидячий спосіб життя)',
+                           title: t('activity-min'),
                            value: 'MIN',
                         },
                         {
-                           title: 'невелика (легкі вправи 1-3 рази на тиждень)',
+                           title: t('activity-low'),
                            value: 'LOW',
                         },
                         {
-                           title: 'середня (помірні вправи 3-5 разів на тиждень)',
+                           title: t('activity-avarage'),
                            value: 'AVERAGE',
                         },
                         {
-                           title: 'висока (інтенсивні вправи 6-7 разів на тиждень)',
+                           title: t('activity-high'),
                            value: 'HIGH',
                         },
                         {
-                           title: 'дуже висока (фізична робота або тренування)',
+                           title: t('activity-very-high'),
                            value: 'VERY_HIGH',
                         },
                      ]}
                   />
                   <OptionInput
-                     label="Мета"
+                     label={t('goal')}
                      selectName="goal"
                      options={[
                         {
-                           title: 'Схуднення',
+                           title: t('goal-loss'),
                            value: 'LOSS',
                         },
                         {
-                           title: 'Підтримка',
+                           title: t('goal-maintenance'),
                            value: 'MAINTENANCE',
                         },
                         {
-                           title: 'Набір ваги',
+                           title: t('goal-gain'),
                            value: 'GAIN',
                         },
                      ]}

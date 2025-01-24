@@ -14,10 +14,12 @@ import foodIcon from './icons/food.svg';
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
 import FoodForm from '@/app/shared/components/food/FoodForm';
+import { useTranslations } from 'use-intl';
 
 export default function FoodPage() {
    const { data: session } = useSession();
    const [open, setOpen] = useState<boolean>(false);
+   const t = useTranslations('Food');
 
    return (
       <>
@@ -33,21 +35,16 @@ export default function FoodPage() {
 
          <main className={styles.root}>
             <div className={styles.greetingsBlock}>
-               <Image src={foodImage} className={styles.img} alt="food" />
+               <Image src={foodImage} className={styles.img} alt="food" priority />
                <div className={styles.greetingTitle}>
                   <div className={styles.title}>
-                     <h1 className={styles.mainTitle}>
-                        Індивідуальній раціон харчування
-                     </h1>
-                     <span className={styles.span}>
-                        Для тих, хто піклується про своє тіло, здоров&apos;я та
-                        час.
-                     </span>
+                     <h1 className={styles.mainTitle}>{t('main-header')}</h1>
+                     <span className={styles.span}>{t('main-slogan')}</span>
                   </div>
                   {session ? (
                      <MainButton
                         className={styles.lastBlock}
-                        label="Замовити"
+                        label={t('order')}
                         onClick={() => setOpen(true)}
                      />
                   ) : (
@@ -59,85 +56,74 @@ export default function FoodPage() {
                            textWrap: 'nowrap',
                         }}
                      >
-                        Для замовлення індивідуального харчування вам слід
-                        авторизуватися
+                        {t('auth-to-order')}
                      </div>
                   )}
                </div>
             </div>
-            <div className={styles.care}>
-               Турбота про себе — це турбота про майбутнє
-            </div>
+            <div className={styles.care}>{t('section-slogan')}</div>
             <div className={styles.questions}>
-               <h2 className={styles.h2}>
-                  Які питання закриє вам раціон харчування?
-               </h2>
+               <h2 className={styles.h2}>{t('question-header')}</h2>
                <div className={styles.tiles}>
                   <Tile
                      icon={weightIcon}
-                     label="Корекція ваги"
-                     content="Якщо ви хочете скоригувати свої форми."
+                     label={t('tile-weight-header')}
+                     content={t('tile-weight-desc')}
                   />
                   <Tile
                      icon={strongIcon}
-                     label="Набір маси"
-                     content="Чи плануєте набрати м'язову масу? Ми Вам допоможемо!"
+                     label={t('tile-strong-header')}
+                     content={t('tile-strong-desc')}
                   />
                   <Tile
                      icon={doctorIcon}
-                     label="Проблема зі шкірою"
-                     content="Якщо ви помітили явні проблеми зі шкірою обличчя."
+                     label={t('tile-skin-header')}
+                     content={t('tile-skin-desc')}
                   />
                   <Tile
                      icon={pillsIcon}
-                     label="Нестача вітамінів"
-                     content="Якщо в організмі не вистачає вітамінів та мікроелементів."
+                     label={t('tile-vitamin-header')}
+                     content={t('tile-vitamin-desc')}
                   />
                   <Tile
                      icon={energyIcon}
-                     label="Відсутність енергії"
-                     content="Чи відчуваєте, що немає енергії на здавалося б елементарні заняття?"
+                     label={t('tile-energy-header')}
+                     content={t('tile-energy-desc')}
                   />
                   <Tile
                      icon={foodIcon}
-                     label="Залежність від їжі"
-                     content="Емоційна залежність від їжі. Коли складно стримати себе, щоб не з'їсти чогось смачненького."
+                     label={t('tile-food-header')}
+                     content={t('tile-food-desc')}
                   />
                </div>
             </div>
             <div className={styles.work}>
-               <h2>Як ми працюємо</h2>
+               <h2>{t('how-we-work')}</h2>
                <div className={styles.step}>
                   <div className={styles.number}>1</div>
-                  <span className={styles.label}>
-                     Ви купуєте Індивідуальний раціон харчування.
-                  </span>
+                  <span className={styles.label}>{t('step1')}</span>
                </div>
                <div className={styles.step}>
                   <div className={styles.number}>2</div>
-                  <span className={styles.label}>
-                     Вам на пошту приходить лист з анкетою, яку ви заповнюєте і
-                     надсилаєте нам.
-                  </span>
+                  <span className={styles.label}>{t('step2')}</span>
                </div>
                <div className={styles.step}>
                   <div className={styles.number}>3</div>
-                  <span className={styles.label}>
-                     Ми складаємо раціон та відправляємо вам на пошту.
-                  </span>
+                  <span className={styles.label}>{t('step3')}</span>
                </div>
                <div className={styles.step}>
                   <div className={styles.number}>4</div>
-                  <span className={styles.label}>
-                     Ви корисно і смачно харчуєтесь в задоволення.
-                  </span>
+                  <span className={styles.label}>{t('step4')}</span>
                </div>
             </div>
             <div
                style={{ margin: '175px auto 64px auto', width: 'min-content' }}
             >
                {session ? (
-                  <MainButton label="Замовити" onClick={() => setOpen(true)} />
+                  <MainButton
+                     label={t('order')}
+                     onClick={() => setOpen(true)}
+                  />
                ) : (
                   <div
                      style={{
@@ -146,8 +132,7 @@ export default function FoodPage() {
                         textWrap: 'nowrap',
                      }}
                   >
-                     Для замовлення індивідуального харчування вам слід
-                     авторизуватися
+                     {t('auth-to-order')}
                   </div>
                )}
             </div>

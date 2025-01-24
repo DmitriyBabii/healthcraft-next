@@ -5,13 +5,16 @@ import FacebookIcon from './icons/facebook.svg';
 import TwitterIcon from './icons/twitter.svg';
 import PinterestIcon from './icons/pinterest.svg';
 import AppLink from '../components/AppLink';
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
+   const t = useTranslations('Footer');
+
    return (
       <>
          <footer className={styles.root}>
             <div className={styles.contacts}>
-               <h3 className={styles.h3}>Контакти</h3>
+               <h3 className={styles.h3}>{t('contacts')}</h3>
                <div>
                   <h4 className={styles.h4}>Email</h4>
                   <AppLink
@@ -22,7 +25,7 @@ export default function Footer() {
                   </AppLink>
                </div>
                <div>
-                  <h4 className={styles.h4}>Phone</h4>
+                  <h4 className={styles.h4}>{t('phone')}</h4>
                   <AppLink href="tel:+380(96)-54-54-543" className={styles.a}>
                      +380(96)-54-54-543
                   </AppLink>
@@ -34,23 +37,23 @@ export default function Footer() {
             <div className={styles.pages}>
                <h3 className={styles.h3}>HealthCraft</h3>
                <AppLink href={'/'} className={styles.a}>
-                  Головна
+                  {t('main-link')}
                </AppLink>
                <AppLink href={'/food'} className={styles.a}>
-                  Харчування
+                  {t('food-link')}
                </AppLink>
                <AppLink href={'/calculator/bmi'} className={styles.a}>
-                  Калькулятор (ІМТ)
+                  {t('bmi-link')}
                </AppLink>
                <AppLink href={'/calculator/tdee'} className={styles.a}>
-                  Калькулятор калорій
+                  {t('tdee-link')}
                </AppLink>
                <AppLink href={'/trainings'} className={styles.a}>
-                  Тренування
+                  {t('training-link')}
                </AppLink>
             </div>
             <div className={styles.social}>
-               <h3 className={styles.h3}>Соціальні мережі</h3>
+               <h3 className={styles.h3}>{t('socials')}</h3>
                <div className={styles.plates}>
                   <a className={styles.a} href="#" target="_blank">
                      <Image

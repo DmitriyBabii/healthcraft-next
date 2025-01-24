@@ -5,6 +5,7 @@ import AppLink from '../components/AppLink';
 import styles from './Header.module.css';
 import BurgerMenu from '../components/burger/BurgerMenu';
 import { useTranslations } from 'next-intl';
+import LocaleSwitcherSelect from '../components/locale/LocaleSwitcherSelect';
 
 export default function Header() {
    const pathname = usePathname();
@@ -29,9 +30,7 @@ export default function Header() {
             <AppLink href={'/trainings'} className={styles.link}>
                {t('training')}
             </AppLink>
-            <div>
-               <div>en</div>
-            </div>
+            <LocaleSwitcherSelect />
             <BurgerMenu />
          </header>
       </>

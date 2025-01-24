@@ -1,0 +1,17 @@
+.root {
+   display: flex;
+   gap: 12px;
+}
+
+.locale {
+   font-size: 24px;
+   font-weight: 400;
+   font-family: var(--font-montserrat);
+   color: white;
+   cursor: pointer;
+}
+
+.current {
+    text-transform: uppercase;
+    font-weight: 700;
+ }

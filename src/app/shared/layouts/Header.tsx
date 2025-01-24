@@ -29,6 +29,9 @@ export default function Header() {
             <AppLink href={'/trainings'} className={styles.link}>
                {t('training')}
             </AppLink>
+            <div>
+               <div>en</div>
+            </div>
             <BurgerMenu />
          </header>
       </>

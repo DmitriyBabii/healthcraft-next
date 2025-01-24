@@ -10,6 +10,7 @@ import {
 } from 'react';
 import styles from './FoodForm.module.css';
 import { useSession } from 'next-auth/react';
+import { useTranslations } from 'next-intl';
 
 interface FoodOrderForm {
    name: string;
@@ -34,6 +35,7 @@ export default function FoodForm({
    const [message, setMessage] = useState<string | null>(null);
    const [sale, setSale] = useState<boolean>(false);
    const { data: session } = useSession();
+   const t = useTranslations('FoodForm');
 
    useEffect(() => {
       if (formData.promo && formData.promo === 'promo') {
@@ -56,7 +58,7 @@ export default function FoodForm({
       });
 
       if (res.ok) {
-         setMessage('Ваш запис було збережено');
+         setMessage(t('order-saved'));
          setTimeout(() => setOpen(false), 5000);
       }
    };
@@ -73,7 +75,7 @@ export default function FoodForm({
       <>
          <div className={styles.overlay} onClick={() => setOpen(false)}></div>
          <div className={styles.root}>
-            <h3 className={styles.h3}>Ваше замовлення</h3>
+            <h3 className={styles.h3}>{t('your-order')}</h3>
             <span className={styles.price}>
                {sale ? '1 499 UAH' : '1 999 UAH'}
             </span>
@@ -82,7 +84,7 @@ export default function FoodForm({
                   className={styles.input}
                   type="text"
                   name="name"
-                  placeholder="ПІБ"
+                  placeholder={t('full-name')}
                   onChange={handleChanges}
                   required
                />
@@ -98,7 +100,7 @@ export default function FoodForm({
                   className={styles.input}
                   type="text"
                   name="phoneNumber"
-                  placeholder="Номер телефону"
+                  placeholder={t('phone-label')}
                   onChange={handleChanges}
                   required
                />
@@ -106,18 +108,18 @@ export default function FoodForm({
                   className={styles.input}
                   type="text"
                   name="wishes"
-                  placeholder="Побажання"
+                  placeholder={t('wishes-label')}
                   onChange={handleChanges}
                />
                <input
                   className={styles.input}
                   type="text"
                   name="promo"
-                  placeholder="Промокод"
+                  placeholder={t('promo-label')}
                   onChange={handleChanges}
                />
                <button className={styles.button}>
-                  <span className={styles.span}>Замовити</span>
+                  <span className={styles.span}>{t('order')}</span>
                   <svg
                      className={styles.svg}
                      xmlns="http://www.w3.org/2000/svg"

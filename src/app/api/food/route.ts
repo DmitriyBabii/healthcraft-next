@@ -15,6 +15,8 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify(reqBody),
    });
 
+   console.log("res", res)
+
    if (res.ok) {
       return NextResponse.json({}, { status: 200 });
    } else {

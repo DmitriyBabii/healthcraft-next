@@ -94,5 +94,14 @@
     "main-header": "Your Healthy Body, Your Choice",
     "main-desc": "We are glad that you have chosen us on your journey to a healthier and more active life. Here you will find everything you need to achieve your goals. Start your journey right now – calculate your body mass to get recommendations that will help you become the best version of yourself!",
     "main-btn": "Calculate"
+  },
+  "FoodForm": {
+    "order-saved": "Your order saved",
+    "your-order": "Your order",
+    "full-name": "Full name",
+    "order": "Order",
+    "promo-label": "Promo",
+    "phone-label": "Phone",
+    "wishes-label": "Wishes"
   }
 }

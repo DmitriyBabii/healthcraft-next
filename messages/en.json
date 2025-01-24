@@ -1,0 +1,12 @@
+{
+  "HomePage": {
+     "title": "Hello world!",
+     "about": "Go to the about page"
+  },
+  "Header": {
+     "food-link": "Food",
+     "calculator-bmi": "Calculator BMI",
+     "calculator-tdee": "Calculator TDEE",
+     "training": "Training"
+  }
+}

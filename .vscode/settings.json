@@ -1,6 +1,11 @@
 {
     "cSpell.words": [
+        "Namdhinggo",
         "tdee",
         "співпадають"
+    ],
+    "i18n-ally.localesPaths": [
+        "messages",
+        "src/i18n"
     ]
 }

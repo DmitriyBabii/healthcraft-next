@@ -4,28 +4,30 @@ import { usePathname } from 'next/navigation';
 import AppLink from '../components/AppLink';
 import styles from './Header.module.css';
 import BurgerMenu from '../components/burger/BurgerMenu';
+import { useTranslations } from 'next-intl';
 
 export default function Header() {
    const pathname = usePathname();
-   const isHomePage = pathname === '/';
+   const isHomePage = pathname.match(/\/(uk|en)$/);
+   const t = useTranslations('Header');
 
    return (
       <>
          <header className={`${styles.root} ${isHomePage ? styles.home : ''}`}>
             <AppLink href={'/food'} className={styles.link}>
-               Харчування
+               {t('food-link')}
             </AppLink>
             <AppLink href={'/calculator/bmi'} className={styles.link}>
-               Калькулятор (ІМТ)
+               {t('calculator-bmi')}
             </AppLink>
             <AppLink href={'/'} className={styles.mainLink}>
                HC
             </AppLink>
             <AppLink href="/calculator/tdee" className={styles.link}>
-               Калькулятор калорій
+               {t('calculator-tdee')}
             </AppLink>
             <AppLink href={'/trainings'} className={styles.link}>
-               Тренування
+               {t('training')}
             </AppLink>
             <BurgerMenu />
          </header>

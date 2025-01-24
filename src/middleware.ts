@@ -1,7 +1,8 @@
-export { default } from 'next-auth/middleware';
+import createMiddleware from 'next-intl/middleware';
+import { routing } from './i18n/routing';
 
+export default createMiddleware(routing);
 
-// ban paths
 export const config = {
-   matcher: [],
+   matcher: ['/', '/(uk|en)/:path*'],
 };

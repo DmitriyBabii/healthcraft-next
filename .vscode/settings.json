@@ -1,12 +1,7 @@
 {
-    "cSpell.words": [
-        "Namdhinggo",
-        "tdee",
-        "співпадають"
-    ],
     "i18n-ally.localesPaths": [
         "messages",
-        "src/i18n"
-    ],
-    "i18n-ally.keystyle": "nested"
+        "src/i18n",
+        "src/app/shared/components/locale"
+    ]
 }
